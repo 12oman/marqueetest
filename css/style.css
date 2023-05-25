@@ -1,0 +1,43 @@
+.time {
+    --gap: 1rem;
+    width: 100%;
+    text-transform: uppercase;
+    white-space: nowrap;
+    align-content: center;
+    overflow: hidden;
+    user-select: none;
+    position: relative;
+    display: flex;
+}
+
+.time div {
+    flex-shrink: 0;
+    font-size: 10em;
+    font-family: 'VT323', monospace;
+    color: white;
+    text-shadow: -4px -4px 0px rgba(48, 200, 255, 0.834);
+    gap: var(--gap);
+    animation: animate 9s linear infinite;
+}
+/* we double the animation time so that one div flows into the other smootly, then we're using css to do the work */
+
+@keyframes animate {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(-50%);      
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+/* good old debug style so that we can see everything */
+*:not(path):not(g) {
+	color:                    hsla(210, 100%, 100%, 0.9) !important;
+	background:               hsla(210, 100%,  50%, 0.5) !important;
+	outline:    solid 0.25rem hsla(210, 100%, 100%, 0.5) !important;
+
+	box-shadow: none !important;
+}
